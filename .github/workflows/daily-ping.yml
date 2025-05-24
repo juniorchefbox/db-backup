@@ -26,7 +26,7 @@ jobs:
       run: |
         # Generate timestamp for unique filename
         TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-        FILENAME="backup_${TIMESTAMP}.zip"
+        FILENAME="backup_${TIMESTAMP}.txt"
         
         # Download the backup file with bearer token
         curl -L -H "Authorization: Bearer ${{ secrets.API_SECRET_TOKEN }}" -o "backup/${FILENAME}" "https://4962-72-82-148-207.ngrok-free.app/api/backup"
