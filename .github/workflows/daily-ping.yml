@@ -2,7 +2,7 @@ name: Daily Backup Ping
 
 on:
   schedule:
-    - '* * * * *'  # 4am UTC daily
+    - cron: '* * * * *'  # Every minute (not 4am UTC)
 
 permissions:
   contents: write
