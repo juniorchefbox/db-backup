@@ -25,8 +25,8 @@ jobs:
         TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
         FILENAME="backup_${TIMESTAMP}.zip"
         
-        # Download the backup file
-        curl -L -o "backup/${FILENAME}" "https://4962-72-82-148-207.ngrok-free.app/api/backup"
+        # Download the backup file with bearer token
+        curl -L -H "Authorization: Bearer ${{ secrets.API_SECRET_TOKEN }}" -o "backup/${FILENAME}" "https://4962-72-82-148-207.ngrok-free.app/api/backup"
         
         # Check if download was successful
         if [ -f "backup/${FILENAME}" ]; then
