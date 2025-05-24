@@ -2,9 +2,7 @@ name: Daily Backup Ping
 
 on:
   schedule:
-    # Runs every minute
-    - cron: '* * * * *'
-  workflow_dispatch: # Allows manual triggering
+    - '0 4 * * *'  # 4am UTC daily
 
 permissions:
   contents: write
