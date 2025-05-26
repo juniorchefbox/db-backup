@@ -2,7 +2,7 @@ name: Daily Backup Ping
 
 on:
   schedule:
-    # - cron: '0 4 * * *'  # Every minute (not 4am UTC)
+    - cron: '0 4 * * *'  # Every minute (not 4am UTC)
 
 permissions:
   contents: write
@@ -27,7 +27,7 @@ jobs:
         FILENAME="backup_${TIMESTAMP}.txt"
         
         # Download the backup file with bearer token
-        curl -L -H "Authorization: Bearer ${{ secrets.API_SECRET_TOKEN }}" -o "backup/${FILENAME}" "https://4962-72-82-148-207.ngrok-free.app/api/backup"
+        curl -L -H "Authorization: Bearer ${{ secrets.API_SECRET_TOKEN }}" -o "backup/${FILENAME}" "https://www.juniorchefbox.com/api/backup"
         
         # Check if download was successful
         if [ -f "backup/${FILENAME}" ]; then
